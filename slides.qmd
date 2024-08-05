@@ -32,3 +32,69 @@ You can learn more about controlling the appearance of RevealJS output here: <ht
 
 # Your Turn {.your-turn .center-slide}
 
+## How does R3M work? {.inverse}
+
+## How does R3M work?
+
+* Live sessions
+* Co-working hours
+* 1:1
+* Feedback and project assignment
+* Discord and community
+
+## Live sessions
+
+* When: Thursdays at 10 am PT
+* Duration: 1 hour
+* Goal: review, exercise, ask questions
+
+## Co-working hours
+
+* When: Mondays at 10 am PT
+* Duration: 1 hour
+* Goal: exercise and socialize
+
+## 1:1
+
+* When: on demand
+* Duration: 30 minutes
+* Goal: chat, ask questions, debug together
+
+## Feedback and project assignment
+
+* Get personalized feedbacks when submitting assignments within the 3 months.
+
+* Asssignments usually take a few minutes to complete early in the program, and a bit longer towards the end.
+
+* It's a project-oriented program!
+
+## What assignments look like
+
+![](assets/feedback.png)
+
+## Discord and community
+
+We use a Discord server to learn together, share accomplishments, frustrations, and pet pictures!
+
+## What will you have access to? {.inverse}
+
+## Life access
+
+*Only happen during the 3 months, but are recorded and you'll have access to them forever.*
+
+* Live sessions  
+* Feedbacks for project assignments  
+
+## Partial life access 
+
+*Full access during the 3 months, partial access after.*
+
+* Discord and community  
+
+## Temporary access
+
+*Only happen during the 3 months and are not recorded.*
+
+* Co-working hours  
+* 1:1  
+
