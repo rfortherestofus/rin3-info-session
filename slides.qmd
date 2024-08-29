@@ -1,5 +1,5 @@
 ---
-title: R for the Rest of Us Slide Template
+title: R in 3 Months Info Session
 format:
   rfortherestofus-slides-revealjs:
     menu: false
@@ -9,6 +9,7 @@ format:
     center: true
     incremental: true
     auto-animate: true
+    df-print: paged
 execute: 
   message: false
   warning: false
@@ -16,85 +17,321 @@ execute:
 title-slide-attributes:
   data-background-image: assets/rru-hex-bg-gradient-dark.svg
   data-background-size: cover
+preview:
+  port: 4200
+  browser: true
 ---
 
-## Introduction
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(gt)
+library(tidycensus)
+```
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+# Before We Start
 
-## More Information
+Please take the survey at [https://rfor.us/familiaritysurvey](https://rfor.us/familiaritysurvey)
 
-You can learn more about controlling the appearance of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
+![](assets/familiarity-survey.gif)
 
-## Inverse Slide {.inverse}
+# Logistics {.inverse}
 
-## My Turn {.my-turn}
+---
 
-# Your Turn {.your-turn .center-slide}
+- Recording, slides, and report will be shared by email
 
-## How does R3M work? {.inverse}
+- David will talk about R in general
 
-## How does R3M work?
+- Gracielle will talk about R in 3 Months
 
-* Live sessions
-* Co-working hours
-* 1:1
-* Feedback and project assignment
-* Discord and community
+- If you have any questions, please put them in the chat (we'll stop if necessary)
 
-## Live sessions
+- There will also be time for Q&A at the end
 
-* When: Thursdays at 10 am PT
-* Duration: 1 hour
-* Goal: review, exercise, ask questions
+# Who Are We? {.inverse}
 
-## Co-working hours
+# What is R? {.inverse}
 
-* When: Mondays at 10 am PT
-* Duration: 1 hour
-* Goal: exercise and socialize
+---
 
-## 1:1
+**What I tell people who just want the basics:**
 
-* When: on demand
-* Duration: 30 minutes
-* Goal: chat, ask questions, debug together
+- R is a high-powered Excel
 
-## Feedback and project assignment
+. . .
 
-* Get personalized feedbacks when submitting assignments within the 3 months.
+**What I really want to say:**
 
-* Asssignments usually take a few minutes to complete early in the program, and a bit longer towards the end.
+- R is a tool that can completely revolutionize how you work with data
 
-* It's a project-oriented program!
+## Data Analysis in a Snap {.inverse}
 
-## What assignments look like
+---
+
+```{r}
+penguins |>
+  select(species:bill_length_mm) |>
+  slice(1:10) 
+```
+
+---
+
+```{r}
+#| echo: true
+#| eval: false
+penguins |>
+  group_by(species) |>
+  summarize(avg_bill_length = mean(
+    bill_length_mm,
+    na.rm = TRUE
+  ))
+```
+
+. . .
+
+```{r}
+penguins |>
+  group_by(species) |>
+  summarize(avg_bill_length = mean(
+    bill_length_mm,
+    na.rm = TRUE
+  )) 
+```
+
+---
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2"
+penguins |>
+  group_by(island) |>
+  summarize(avg_bill_length = mean(
+    bill_length_mm,
+    na.rm = TRUE
+  ))
+```
+
+. . .
+
+```{r}
+penguins |>
+  group_by(island) |>
+  summarize(avg_bill_length = mean(
+    bill_length_mm,
+    na.rm = TRUE
+  )) 
+```
+
+## High-Quality Data Visualization {.inverse}
+
+---
+
+:::{.center-slide}
+![](assets/qz-ggplot-article.png)
+:::
+
+---
+
+:::{.center-slide}
+![](assets/bbc-plots.png)
+:::
+
+---
+
+:::{.center-slide}
+![](assets/psc.png)
+:::
+
+
+# Packages {.inverse}
+
+---
+
+![](assets/tidyverse-website.png)
+
+---
+
+![](assets/gendercoder.png)
+
+## R's Killer Feature: Quarto {.inverse}
+
+---
+
+![](assets/non-r-workflow.png)
+
+---
+
+![](assets/render-quarto.png)
+
+## Familiarity Survey {.inverse}
+
+## R is a Workflow Tool That Happens to Do Stats {.inverse}
+
+---
+
+![](assets/rachel-udow-linkedin.png)
+
+## tidycensus {.inverse}
+
+::: {.notes}
+https://data.census.gov/table/ACSDT5YAIAN2021.B19013?q=B19013_001
+:::
+
+---
+
+```{r}
+#| echo: true
+#| eval: false
+get_acs(
+  geography = "state",
+  variables = "B19013_001",
+  year = 2021
+)
+```
+
+. . .
+
+```{r}
+get_acs(
+  geography = "state",
+  variables = "B19013_001",
+  year = 2021
+) |> 
+  slice(1:5) 
+```
+
+
+
+## The Best Reason to Learn R {.inverse}
+
+---
+
+![](assets/rstats-supportive-community.gif)
+
+
+
+# How Does R in 3 Months Work? {.inverse}
+
+---
+
+- Course materials
+
+- Live sessions
+
+- Co-working sessions
+
+- Project assignments and personalized feedback
+
+- 1-on-1 meetings
+
+- Discord and community
+
+## Live Sessions
+
+- When: Thursdays at 10 am PT
+- Duration: 1 hour
+- Goal: review, exercise, ask questions
+
+## Co-Working Sessions
+
+- When: Mondays at 10 am PT
+- Duration: 1 hour
+- Goal: exercise and socialize
+
+## Project Assignments and Personalized Feedback
+
+- Get personalized feedback when submitting assignments within the 3 months
+
+- Assignments usually take a few minutes to complete early in the program, and longer towards the end
+
+- It's a project-oriented program!
+
+## What Feedback Looks Like
 
 ![](assets/feedback.png)
 
-## Discord and community
+## Final Project
+
+TODO: Gracielle add example of final project
+
+## 1-on-1 Meetings
+
+- When: on demand
+
+- Duration: 30 minutes
+
+- Goal: chat, ask questions, debug together
+
+## Discord and Community
 
 We use a Discord server to learn together, share accomplishments, frustrations, and pet pictures!
 
-## What will you have access to? {.inverse}
+# What Will You Have Access To? {.inverse}
 
-## Life access
+## Lifetime Access
 
 *Only happen during the 3 months, but are recorded and you'll have access to them forever.*
 
-* Live sessions  
-* Feedbacks for project assignments  
+- Live sessions  
 
-## Partial life access 
+- Feedback on project assignments  
+
+## Partial Access
 
 *Full access during the 3 months, partial access after.*
 
-* Discord and community  
+- Discord and community  
 
-## Temporary access
+## Access Only During R in 3 Months
 
 *Only happen during the 3 months and are not recorded.*
 
-* Co-working hours  
-* 1:1  
+- Co-working sessions
 
+- 1-on-1 meetings
+
+# Learn More {.center-slide}
+
+![](assets/rin3-page.png)
+
+[https://rfortherestofus.com/3months](https://rfortherestofus.com/3months)
+
+# Questions? {.inverse}
+
+
+
+---
+
+:::: {.columns}
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**David**
+
+[david@rfortherestofus.com](mailto:david@rfortherestofus.com){.small}
+:::
+
+::: {.column width="50%"}
+![](https://rfortherestofus.com/images/headshots/dk-headshot-new.jpg){fig-align="center" height="175px"}
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Gracielle**
+
+[gracielle@rfortherestofus.com](mailto:gracielle@rfortherestofus.com){.small}
+:::
+
+::: {.column width="50%"}
+![](https://rfortherestofus.com/images/headshots/gracielle-higino.png){fig-align="center" height="175px"}
+:::
+
+::::

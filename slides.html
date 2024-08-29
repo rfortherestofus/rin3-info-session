@@ -8,9 +8,9 @@
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.53">
+  <meta name="generator" content="quarto-1.5.54">
 
-  <title>R for the Rest of Us Slide Template</title>
+  <title>R in 3 Months Info Session</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -319,117 +384,348 @@
       margin-right: 0; 
     }
   </style>
+  <link href="slides_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+  <script src="slides_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="assets/rru-hex-bg-gradient-dark.svg" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">R for the Rest of Us Slide Template</h1>
+  <h1 class="title">R in 3 Months Info Session</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="introduction" class="slide level2 center">
-<h2>Introduction</h2>
-<p><em>TODO</em> Create an example file that demonstrates the formatting and features of your format.</p>
-</section>
-<section id="more-information" class="slide level2 center">
-<h2>More Information</h2>
-<p>You can learn more about controlling the appearance of RevealJS output here: <a href="https://quarto.org/docs/presentations/revealjs/" class="uri">https://quarto.org/docs/presentations/revealjs/</a></p>
-</section>
-<section id="inverse-slide" class="slide level2 inverse center">
-<h2>Inverse Slide</h2>
-</section>
-<section id="my-turn" class="slide level2 my-turn center">
-<h2>My Turn</h2>
-</section>
+<section id="before-we-start" class="title-slide slide level1 center">
+<h1>Before We Start</h1>
+<p>Please take the survey at <a href="https://rfor.us/familiaritysurvey">https://rfor.us/familiaritysurvey</a></p>
+
+<img data-src="assets/familiarity-survey.gif" class="r-stretch"></section>
+
 <section>
-<section id="your-turn" class="title-slide slide level1 your-turn center-slide center">
-<h1>Your Turn</h1>
+<section id="logistics" class="title-slide slide level1 inverse center">
+<h1>Logistics</h1>
 
 </section>
-<section id="how-does-r3m-work" class="slide level2 inverse center">
-<h2>How does R3M work?</h2>
-</section>
-<section id="how-does-r3m-work-1" class="slide level2 center">
-<h2>How does R3M work?</h2>
+<section class="slide level2 center">
+
 <ul>
-<li class="fragment">Live sessions</li>
-<li class="fragment">Co-working hours</li>
-<li class="fragment">1:1</li>
-<li class="fragment">Feedback and project assignment</li>
-<li class="fragment">Discord and community</li>
+<li class="fragment"><p>Recording, slides, and report will be shared by email</p></li>
+<li class="fragment"><p>David will talk about R in general</p></li>
+<li class="fragment"><p>Gracielle will talk about R in 3 Months</p></li>
+<li class="fragment"><p>If you have any questions, please put them in the chat (we’ll stop if necessary)</p></li>
+<li class="fragment"><p>There will also be time for Q&amp;A at the end</p></li>
+</ul>
+</section></section>
+<section id="who-are-we" class="title-slide slide level1 inverse center">
+<h1>Who Are We?</h1>
+
+</section>
+
+<section>
+<section id="what-is-r" class="title-slide slide level1 inverse center">
+<h1>What is R?</h1>
+
+</section>
+<section class="slide level2 center">
+
+<p><strong>What I tell people who just want the basics:</strong></p>
+<ul>
+<li class="fragment">R is a high-powered Excel</li>
+</ul>
+<div class="fragment">
+<p><strong>What I really want to say:</strong></p>
+<ul>
+<li class="fragment">R is a tool that can completely revolutionize how you work with data</li>
+</ul>
+</div>
+</section>
+<section id="data-analysis-in-a-snap" class="slide level2 inverse center">
+<h2>Data Analysis in a Snap</h2>
+</section>
+<section class="slide level2 center">
+
+<div class="cell">
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelie","2":"Torgersen","3":"39.1"},{"1":"Adelie","2":"Torgersen","3":"39.5"},{"1":"Adelie","2":"Torgersen","3":"40.3"},{"1":"Adelie","2":"Torgersen","3":"NA"},{"1":"Adelie","2":"Torgersen","3":"36.7"},{"1":"Adelie","2":"Torgersen","3":"39.3"},{"1":"Adelie","2":"Torgersen","3":"38.9"},{"1":"Adelie","2":"Torgersen","3":"39.2"},{"1":"Adelie","2":"Torgersen","3":"34.1"},{"1":"Adelie","2":"Torgersen","3":"42.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">summarize</span>(<span class="at">avg_bill_length =</span> <span class="fu">mean</span>(</span>
+<span id="cb1-4"><a href=""></a>    bill_length_mm,</span>
+<span id="cb1-5"><a href=""></a>    <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-6"><a href=""></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["avg_bill_length"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelie","2":"38.79139"},{"1":"Chinstrap","2":"48.83382"},{"1":"Gentoo","2":"47.50488"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">summarize</span>(<span class="at">avg_bill_length =</span> <span class="fu">mean</span>(</span>
+<span id="cb2-4"><a href=""></a>    bill_length_mm,</span>
+<span id="cb2-5"><a href=""></a>    <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-6"><a href=""></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["island"],"name":[1],"type":["fct"],"align":["left"]},{"label":["avg_bill_length"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Biscoe","2":"45.25749"},{"1":"Dream","2":"44.16774"},{"1":"Torgersen","2":"38.95098"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="high-quality-data-visualization" class="slide level2 inverse center">
+<h2>High-Quality Data Visualization</h2>
+</section>
+<section class="slide level2 center">
+
+<div class="center-slide">
+<p><img data-src="assets/qz-ggplot-article.png"></p>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="center-slide">
+<p><img data-src="assets/bbc-plots.png"></p>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="center-slide">
+<p><img data-src="assets/psc.png"></p>
+</div>
+</section></section>
+<section>
+<section id="packages" class="title-slide slide level1 inverse center">
+<h1>Packages</h1>
+
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/tidyverse-website.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/gendercoder.png" class="r-stretch"></section>
+<section id="rs-killer-feature-quarto" class="slide level2 inverse center">
+<h2>R’s Killer Feature: Quarto</h2>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/non-r-workflow.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/render-quarto.png" class="r-stretch"></section>
+<section id="familiarity-survey" class="slide level2 inverse center">
+<h2>Familiarity Survey</h2>
+</section>
+<section id="r-is-a-workflow-tool-that-happens-to-do-stats" class="slide level2 inverse center">
+<h2>R is a Workflow Tool That Happens to Do Stats</h2>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/rachel-udow-linkedin.png" class="r-stretch"></section>
+<section id="tidycensus" class="slide level2 inverse center">
+<h2>tidycensus</h2>
+<aside class="notes">
+<p>https://data.census.gov/table/ACSDT5YAIAN2021.B19013?q=B19013_001</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 center">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">get_acs</span>(</span>
+<span id="cb3-2"><a href=""></a>  <span class="at">geography =</span> <span class="st">"state"</span>,</span>
+<span id="cb3-3"><a href=""></a>  <span class="at">variables =</span> <span class="st">"B19013_001"</span>,</span>
+<span id="cb3-4"><a href=""></a>  <span class="at">year =</span> <span class="dv">2021</span></span>
+<span id="cb3-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["GEOID"],"name":[1],"type":["chr"],"align":["left"]},{"label":["NAME"],"name":[2],"type":["chr"],"align":["left"]},{"label":["variable"],"name":[3],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["moe"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"01","2":"Alabama","3":"B19013_001","4":"54943","5":"377"},{"1":"02","2":"Alaska","3":"B19013_001","4":"80287","5":"1113"},{"1":"04","2":"Arizona","3":"B19013_001","4":"65913","5":"387"},{"1":"05","2":"Arkansas","3":"B19013_001","4":"52123","5":"458"},{"1":"06","2":"California","3":"B19013_001","4":"84097","5":"236"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-best-reason-to-learn-r" class="slide level2 inverse center">
+<h2>The Best Reason to Learn R</h2>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="assets/rstats-supportive-community.gif" class="r-stretch"></section></section>
+<section>
+<section id="how-does-r-in-3-months-work" class="title-slide slide level1 inverse center">
+<h1>How Does R in 3 Months Work?</h1>
+
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li class="fragment"><p>Course materials</p></li>
+<li class="fragment"><p>Live sessions</p></li>
+<li class="fragment"><p>Co-working sessions</p></li>
+<li class="fragment"><p>Project assignments and personalized feedback</p></li>
+<li class="fragment"><p>1-on-1 meetings</p></li>
+<li class="fragment"><p>Discord and community</p></li>
 </ul>
 </section>
 <section id="live-sessions" class="slide level2 center">
-<h2>Live sessions</h2>
+<h2>Live Sessions</h2>
 <ul>
 <li class="fragment">When: Thursdays at 10 am PT</li>
 <li class="fragment">Duration: 1 hour</li>
 <li class="fragment">Goal: review, exercise, ask questions</li>
 </ul>
 </section>
-<section id="co-working-hours" class="slide level2 center">
-<h2>Co-working hours</h2>
+<section id="co-working-sessions" class="slide level2 center">
+<h2>Co-Working Sessions</h2>
 <ul>
 <li class="fragment">When: Mondays at 10 am PT</li>
 <li class="fragment">Duration: 1 hour</li>
 <li class="fragment">Goal: exercise and socialize</li>
 </ul>
 </section>
-<section id="section" class="slide level2 center">
-<h2>1:1</h2>
+<section id="project-assignments-and-personalized-feedback" class="slide level2 center">
+<h2>Project Assignments and Personalized Feedback</h2>
 <ul>
-<li class="fragment">When: on demand</li>
-<li class="fragment">Duration: 30 minutes</li>
-<li class="fragment">Goal: chat, ask questions, debug together</li>
-</ul>
-</section>
-<section id="feedback-and-project-assignment" class="slide level2 center">
-<h2>Feedback and project assignment</h2>
-<ul>
-<li class="fragment"><p>Get personalized feedbacks when submitting assignments within the 3 months.</p></li>
-<li class="fragment"><p>Asssignments usually take a few minutes to complete early in the program, and a bit longer towards the end.</p></li>
+<li class="fragment"><p>Get personalized feedback when submitting assignments within the 3 months</p></li>
+<li class="fragment"><p>Assignments usually take a few minutes to complete early in the program, and longer towards the end</p></li>
 <li class="fragment"><p>It’s a project-oriented program!</p></li>
 </ul>
 </section>
-<section id="what-assignments-look-like" class="slide level2 center">
-<h2>What assignments look like</h2>
+<section id="what-feedback-looks-like" class="slide level2 center">
+<h2>What Feedback Looks Like</h2>
 
 <img data-src="assets/feedback.png" class="r-stretch"></section>
-<section id="discord-and-community" class="slide level2 center">
-<h2>Discord and community</h2>
-<p>We use a Discord server to learn together, share accomplishments, frustrations, and pet pictures!</p>
+<section id="final-project" class="slide level2 center">
+<h2>Final Project</h2>
+<p>TODO: Gracielle add example of final project</p>
 </section>
-<section id="what-will-you-have-access-to" class="slide level2 inverse center">
-<h2>What will you have access to?</h2>
-</section>
-<section id="life-access" class="slide level2 center">
-<h2>Life access</h2>
-<p><em>Only happen during the 3 months, but are recorded and you’ll have access to them forever.</em></p>
+<section id="on-1-meetings" class="slide level2 center">
+<h2>1-on-1 Meetings</h2>
 <ul>
-<li class="fragment">Live sessions<br>
-</li>
-<li class="fragment">Feedbacks for project assignments</li>
+<li class="fragment"><p>When: on demand</p></li>
+<li class="fragment"><p>Duration: 30 minutes</p></li>
+<li class="fragment"><p>Goal: chat, ask questions, debug together</p></li>
 </ul>
 </section>
-<section id="partial-life-access" class="slide level2 center">
-<h2>Partial life access</h2>
+<section id="discord-and-community" class="slide level2 center">
+<h2>Discord and Community</h2>
+<p>We use a Discord server to learn together, share accomplishments, frustrations, and pet pictures!</p>
+</section></section>
+<section>
+<section id="what-will-you-have-access-to" class="title-slide slide level1 inverse center">
+<h1>What Will You Have Access To?</h1>
+
+</section>
+<section id="lifetime-access" class="slide level2 center">
+<h2>Lifetime Access</h2>
+<p><em>Only happen during the 3 months, but are recorded and you’ll have access to them forever.</em></p>
+<ul>
+<li class="fragment"><p>Live sessions</p></li>
+<li class="fragment"><p>Feedback on project assignments</p></li>
+</ul>
+</section>
+<section id="partial-access" class="slide level2 center">
+<h2>Partial Access</h2>
 <p><em>Full access during the 3 months, partial access after.</em></p>
 <ul>
 <li class="fragment">Discord and community</li>
 </ul>
 </section>
-<section id="temporary-access" class="slide level2 center">
-<h2>Temporary access</h2>
+<section id="access-only-during-r-in-3-months" class="slide level2 center">
+<h2>Access Only During R in 3 Months</h2>
 <p><em>Only happen during the 3 months and are not recorded.</em></p>
 <ul>
-<li class="fragment">Co-working hours<br>
-</li>
-<li class="fragment">1:1</li>
+<li class="fragment"><p>Co-working sessions</p></li>
+<li class="fragment"><p>1-on-1 meetings</p></li>
 </ul>
+</section></section>
+<section id="learn-more" class="title-slide slide level1 center-slide center">
+<h1>Learn More</h1>
+
+<img data-src="assets/rin3-page.png" class="r-stretch"><p><a href="https://rfortherestofus.com/3months">https://rfortherestofus.com/3months</a></p>
+</section>
+
+<section>
+<section id="questions" class="title-slide slide level1 inverse center">
+<h1>Questions?</h1>
+
+</section>
+<section class="slide level2 center">
+
+<div class="columns">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>David</strong></p>
+<p><a href="mailto:david@rfortherestofus.com" class="small">david@rfortherestofus.com</a></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://rfortherestofus.com/images/headshots/dk-headshot-new.jpg" class="quarto-figure quarto-figure-center" height="175"></p>
+</figure>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Gracielle</strong></p>
+<p><a href="mailto:gracielle@rfortherestofus.com" class="small">gracielle@rfortherestofus.com</a></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://rfortherestofus.com/images/headshots/gracielle-higino.png" class="quarto-figure quarto-figure-center" height="175"></p>
+</figure>
+</div>
+</div></div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -646,6 +942,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
