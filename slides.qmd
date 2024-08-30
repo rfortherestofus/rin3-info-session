@@ -254,7 +254,7 @@ get_acs(
 
 ## Final Project
 
-TODO: Gracielle add example of final project
+![](assets/final_project_example.jpg)
 
 ## 1-on-1 Meetings
 
