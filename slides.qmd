@@ -71,8 +71,7 @@ Please take the survey at [https://rfor.us/familiaritysurvey](https://rfor.us/fa
 
 ```{r}
 penguins |>
-  select(species:bill_length_mm) |>
-  slice(1:10) 
+  select(species:bill_length_mm)
 ```
 
 ---

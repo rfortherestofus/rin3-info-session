@@ -31,11 +31,6 @@ gs4_auth("david@rfortherestofus.com")
 ```
 
 
-```{css}
-body {
-font-size: 18px;
-}
-```
 
 
 ```{r}
