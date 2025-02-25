@@ -210,7 +210,7 @@ get_acs(
 
 ## Co-Working Sessions
 
-- When: Mondays at 10 am PT
+- When: Tuesdays at 10 am PT
 - Duration: 1 hour
 - Goal: exercise and socialize
 
@@ -230,7 +230,7 @@ get_acs(
 
 . . .
 
-[Example feedback]((https://rfortherestofus.com/feedback/91e3f4b3-74ab-4c1d-9bed-e7e3fc961a0c))
+[Example feedback](https://rfortherestofus.com/feedback/91e3f4b3-74ab-4c1d-9bed-e7e3fc961a0c)
 
 ## Final Project
 
@@ -260,15 +260,11 @@ We have a forum to learn together, share accomplishments, frustrations, and pet 
 
 *Only happen during the 3 months, but are recorded and you'll have access to them forever.*
 
+- Course materials and forum  
+
 - Live sessions  
 
 - Feedback on project assignments  
-
-## Partial Access
-
-*Full access during the 3 months, partial access after.*
-
-- Discord and community  
 
 ## Access Only During R in 3 Months
 
