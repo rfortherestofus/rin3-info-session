@@ -10,6 +10,7 @@ format:
     incremental: true
     auto-animate: true
     df-print: paged
+    output-location: fragment
 execute: 
   message: false
   warning: false
@@ -34,6 +35,10 @@ library(tidycensus)
 Please take the survey at [https://rfor.us/familiaritysurvey](https://rfor.us/familiaritysurvey)
 
 ![](assets/familiarity-survey.gif)
+
+# Slides
+
+[Follow along with the slides!](https://rin3infosession.rfortherestofus.com/slides.html)
 
 # Logistics {.inverse}
 
@@ -78,69 +83,51 @@ penguins |>
 
 ```{r}
 #| echo: true
-#| eval: false
 penguins |>
   group_by(species) |>
-  summarize(avg_bill_length = mean(
-    bill_length_mm,
-    na.rm = TRUE
-  ))
+  summarize(
+    avg_bill_length = mean(
+      bill_length_mm,
+      na.rm = TRUE
+    )
+  )
 ```
 
-. . .
-
-```{r}
-penguins |>
-  group_by(species) |>
-  summarize(avg_bill_length = mean(
-    bill_length_mm,
-    na.rm = TRUE
-  )) 
-```
 
 ---
 
 ```{r}
 #| echo: true
-#| eval: false
 #| code-line-numbers: "2"
 penguins |>
-  group_by(island) |>
-  summarize(avg_bill_length = mean(
-    bill_length_mm,
-    na.rm = TRUE
-  ))
+  group_by(species) |>
+  summarize(
+    avg_bill_length = mean(
+      bill_length_mm,
+      na.rm = TRUE
+    )
+  )
 ```
 
-. . .
-
-```{r}
-penguins |>
-  group_by(island) |>
-  summarize(avg_bill_length = mean(
-    bill_length_mm,
-    na.rm = TRUE
-  )) 
-```
 
 ## High-Quality Data Visualization {.inverse}
 
 ---
 
 :::{.center-slide}
-![](assets/qz-ggplot-article.png)
+[![](assets/qz-ggplot-article.png)](https://qz.com/1007328/all-hail-ggplot2-the-code-powering-all-those-excellent-charts-is-10-years-old)
 :::
 
 ---
 
 :::{.center-slide}
-![](assets/bbc-plots.png)
+[![](assets/bbc-plots.png)](https://book.rfortherestofus.com/themes.html)
 :::
 
 ---
 
 :::{.center-slide}
-![](assets/psc.png)
+[![](assets/psc.png)](https://rfortherestofus.com/success-stories/pschousing)
 :::
 
 
@@ -182,25 +169,13 @@ https://data.census.gov/table/ACSDT5YAIAN2021.B19013?q=B19013_001
 
 ```{r}
 #| echo: true
-#| eval: false
 get_acs(
   geography = "state",
   variables = "B19013_001",
-  year = 2021
-)
-```
-
-. . .
-
-```{r}
-get_acs(
-  geography = "state",
-  variables = "B19013_001",
-  year = 2021
+  year = 2023
 ) |> 
-  slice(1:5) 
+  select(NAME, estimate)
 ```
-
 
 
 ## The Best Reason to Learn R {.inverse}
@@ -225,7 +200,7 @@ get_acs(
 
 - 1-on-1 meetings
 
-- Discord and community
+- Community
 
 ## Live Sessions
 
@@ -247,13 +222,23 @@ get_acs(
 
 - It's a project-oriented program!
 
+- [Example project assignment](https://rfortherestofus.com/courses/r-in-3-months-spring-2025)
+
 ## What Feedback Looks Like
 
 ![](assets/feedback.png)
 
+. . .
+
+[Example feedback]((https://rfortherestofus.com/feedback/91e3f4b3-74ab-4c1d-9bed-e7e3fc961a0c))
+
 ## Final Project
 
 ![](assets/final_project_example.jpg)
+
+. . .
+
+[Example final projects](https://rfortherestofus.com/3months/#how-much-can-you-learn-in-3-months)
 
 ## 1-on-1 Meetings
 
@@ -263,9 +248,11 @@ get_acs(
 
 - Goal: chat, ask questions, debug together
 
-## Discord and Community
+## Community
 
-We use a Discord server to learn together, share accomplishments, frustrations, and pet pictures!
+![](assets/rin3-forum.png)
+
+We have a forum to learn together, share accomplishments, frustrations, and pet pictures!
 
 # What Will You Have Access To? {.inverse}
 
