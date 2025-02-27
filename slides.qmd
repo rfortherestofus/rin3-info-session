@@ -81,10 +81,10 @@ penguins |>
 
 ---
 
+
 ```{r}
 #| echo: true
 penguins |>
-  group_by(species) |>
   summarize(
     avg_bill_length = mean(
       bill_length_mm,
@@ -92,7 +92,6 @@ penguins |>
     )
   )
 ```
-
 
 ---
 
