@@ -172,7 +172,7 @@ get_acs(
   geography = "state",
   variables = "B19013_001",
   year = 2023
-) |> 
+) |>
   select(NAME, estimate)
 ```
 
@@ -221,7 +221,7 @@ get_acs(
 
 - It's a project-oriented program!
 
-- [Example project assignment](https://rfortherestofus.com/courses/r-in-3-months-spring-2025)
+- [Example project assignment](https://rfortherestofus.com/courses/r-in-3-months-fall-2025/lessons/fall2024-week2-project_assignment)
 
 ## What Feedback Looks Like
 
