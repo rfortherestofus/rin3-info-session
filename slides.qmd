@@ -249,17 +249,24 @@ get_acs(
 
 ## Community
 
-![](assets/rin3-forum.png)
+:::: {.columns}
 
-We have a forum to learn together, share accomplishments, frustrations, and pet pictures!
+::: {.column width="50%"}
+![](assets/rin3-discord.png)
+:::
+
+::: {.column width="50%"}
+We have a Discord server to learn together, share accomplishments, frustrations, and pet pictures!
+:::
+::::
 
 # What Will You Have Access To? {.inverse}
 
 ## Lifetime Access
 
-*Only happen during the 3 months, but are recorded and you'll have access to them forever.*
+*Only happen during the 3 months, but you'll have access to them forever.*
 
-- Course materials and forum  
+- Course materials and Discord server  
 
 - Live sessions  
 
