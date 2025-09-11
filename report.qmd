@@ -48,13 +48,15 @@ theme_set(
 ```{r}
 # Import our data
 survey_responses_today <-
-  read_sheet("https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit#gid=1882477504") |>
+  read_sheet(
+    "https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit#gid=1882477504"
+  ) |>
   # Make the variable names easy to work with
   clean_names() |>
   # Convert the timestamp into a date
   mutate(timestamp = as.Date(timestamp)) |>
   # Filter to only keep responses from today
-  filter(timestamp == as_date(now()))
+  filter(timestamp == today())
 ```
 
 # About our Respondents
@@ -85,30 +87,35 @@ We conducted a survey on `r today_pretty`. We received responses from `r number_
 ```{r}
 mean_age <-
   survey_responses_today |>
-  summarize(mean_age = mean(
-    how_old_are_you,
-    na.rm = TRUE
-  )) |>
+  summarize(
+    mean_age = mean(
+      how_old_are_you,
+      na.rm = TRUE
+    )
+  ) |>
   mutate(
-    mean_age =
-      round_half_up(mean_age, 1)
+    mean_age = round_half_up(mean_age, 1)
   ) |>
   pull(mean_age)
 
 max_age <-
   survey_responses_today |>
-  summarize(age = max(
-    how_old_are_you,
-    na.rm = TRUE
-  )) |>
+  summarize(
+    age = max(
+      how_old_are_you,
+      na.rm = TRUE
+    )
+  ) |>
   pull(age)
 
 min_age <-
   survey_responses_today |>
-  summarize(age = min(
-    how_old_are_you,
-    na.rm = TRUE
-  )) |>
+  summarize(
+    age = min(
+      how_old_are_you,
+      na.rm = TRUE
+    )
+  ) |>
   pull(age)
 ```
 
@@ -120,27 +127,27 @@ The graphs below shows the age of respondents broken into groups.
 #| fig-height: 3
 age_categorized <-
   survey_responses_today |>
-  mutate(age_category = case_when(
-    how_old_are_you < 30 ~ "Less than 30",
-    how_old_are_you < 50 ~ "Between 30 and 50",
-    how_old_are_you > 50 ~ "50 or older",
-  )) |>
+  mutate(
+    age_category = case_when(
+      how_old_are_you < 30 ~ "Less than 30",
+      how_old_are_you < 50 ~ "Between 30 and 50",
+      how_old_are_you > 50 ~ "50 or older",
+    )
+  ) |>
   select(how_old_are_you, age_category) |>
   count(age_category) |>
   mutate(
-    age_category =
-      fct(
-        age_category,
-        levels = c(
-          "Less than 30",
-          "Between 30 and 50",
-          "50 or older"
-        )
+    age_category = fct(
+      age_category,
+      levels = c(
+        "Less than 30",
+        "Between 30 and 50",
+        "50 or older"
       )
+    )
   ) |>
   mutate(
-    age_category =
-      fct_rev(age_category)
+    age_category = fct_rev(age_category)
   ) |>
   drop_na(age_category)
 
@@ -182,15 +189,20 @@ The education levels of respondents are below.
 survey_responses_today |>
   count(what_is_the_highest_level_of_education_you_have_completed) |>
   mutate(
-    what_is_the_highest_level_of_education_you_have_completed =
-      fct(
-        what_is_the_highest_level_of_education_you_have_completed,
-        levels = c("Bachelor's degree", "Master's degree", "Doctoral degree", "Other")
+    what_is_the_highest_level_of_education_you_have_completed = fct(
+      what_is_the_highest_level_of_education_you_have_completed,
+      levels = c(
+        "Bachelor's degree",
+        "Master's degree",
+        "Doctoral degree",
+        "Other"
       )
+    )
   ) |>
   mutate(
-    what_is_the_highest_level_of_education_you_have_completed =
-      fct_rev(what_is_the_highest_level_of_education_you_have_completed)
+    what_is_the_highest_level_of_education_you_have_completed = fct_rev(
+      what_is_the_highest_level_of_education_you_have_completed
+    )
   ) |>
   drop_na(what_is_the_highest_level_of_education_you_have_completed) |>
   ggplot(aes(
@@ -232,7 +244,11 @@ respondent_locations <- survey_responses_today |>
     address = what_is_the_city_state_and_country_of_your_primary_residence,
     method = "osm"
   ) |>
-  select(what_is_the_city_state_and_country_of_your_primary_residence, long, lat)
+  select(
+    what_is_the_city_state_and_country_of_your_primary_residence,
+    long,
+    lat
+  )
 
 leaflet(respondent_locations) |>
   addProviderTiles(providers$CartoDB.Positron) |>
@@ -293,16 +309,17 @@ survey_responses_today |>
 ```{r}
 mean_familiarity <-
   survey_responses_today |>
-  summarize(mean_familiarity = mean(
-    how_familiar_are_you_with_r,
-    na.rm = TRUE
-  )) |>
+  summarize(
+    mean_familiarity = mean(
+      how_familiar_are_you_with_r,
+      na.rm = TRUE
+    )
+  ) |>
   mutate(
-    mean_familiarity =
-      round_half_up(
-        mean_familiarity,
-        digits = 1
-      )
+    mean_familiarity = round_half_up(
+      mean_familiarity,
+      digits = 1
+    )
   ) |>
   pull(mean_familiarity)
 ```
@@ -314,24 +331,33 @@ On a 5-point scale, respondents listed their level of familiarity with R as `r n
 survey_responses_today |>
   drop_na(what_is_the_highest_level_of_education_you_have_completed) |>
   group_by(what_is_the_highest_level_of_education_you_have_completed) |>
-  summarize(mean_familiarity = mean(
-    how_familiar_are_you_with_r,
-    na.rm = TRUE
-  )) |>
-  mutate(mean_familiarity = round_half_up(
-    mean_familiarity,
-    digits = 1
-  )) |>
-  mutate(
-    what_is_the_highest_level_of_education_you_have_completed =
-      fct(
-        what_is_the_highest_level_of_education_you_have_completed,
-        levels = c("Bachelor's degree", "Master's degree", "Doctoral degree", "Other")
-      )
+  summarize(
+    mean_familiarity = mean(
+      how_familiar_are_you_with_r,
+      na.rm = TRUE
+    )
   ) |>
   mutate(
-    what_is_the_highest_level_of_education_you_have_completed =
-      fct_rev(what_is_the_highest_level_of_education_you_have_completed)
+    mean_familiarity = round_half_up(
+      mean_familiarity,
+      digits = 1
+    )
+  ) |>
+  mutate(
+    what_is_the_highest_level_of_education_you_have_completed = fct(
+      what_is_the_highest_level_of_education_you_have_completed,
+      levels = c(
+        "Bachelor's degree",
+        "Master's degree",
+        "Doctoral degree",
+        "Other"
+      )
+    )
+  ) |>
+  mutate(
+    what_is_the_highest_level_of_education_you_have_completed = fct_rev(
+      what_is_the_highest_level_of_education_you_have_completed
+    )
   ) |>
   ggplot(aes(
     what_is_the_highest_level_of_education_you_have_completed,
@@ -366,14 +392,18 @@ survey_responses_today |>
 ```{r}
 mean_interest <-
   survey_responses_today |>
-  summarize(mean_interest = mean(
-    how_interested_are_you_in_learning_r,
-    na.rm = TRUE
-  )) |>
-  mutate(mean_interest = round_half_up(
-    mean_interest,
-    digits = 1
-  )) |>
+  summarize(
+    mean_interest = mean(
+      how_interested_are_you_in_learning_r,
+      na.rm = TRUE
+    )
+  ) |>
+  mutate(
+    mean_interest = round_half_up(
+      mean_interest,
+      digits = 1
+    )
+  ) |>
   pull(mean_interest)
 ```
 
@@ -384,36 +414,46 @@ We can do a similar breakdown, but adding age. With one line of code, we can mak
 ```{r}
 r_interest_by_ed_and_age <-
   survey_responses_today |>
-  mutate(age_category = case_when(
-    how_old_are_you < 30 ~ "Less than 30",
-    how_old_are_you < 50 ~ "Between 30 and 50",
-    how_old_are_you > 50 ~ "50 or older",
-  )) |>
+  mutate(
+    age_category = case_when(
+      how_old_are_you < 30 ~ "Less than 30",
+      how_old_are_you < 50 ~ "Between 30 and 50",
+      how_old_are_you > 50 ~ "50 or older",
+    )
+  ) |>
   group_by(
     what_is_the_highest_level_of_education_you_have_completed,
     age_category
   ) |>
-  summarize(mean_interest = mean(
-    how_interested_are_you_in_learning_r,
-    na.rm = TRUE
-  )) |>
+  summarize(
+    mean_interest = mean(
+      how_interested_are_you_in_learning_r,
+      na.rm = TRUE
+    )
+  ) |>
   ungroup() |>
   mutate(mean_interest = round_half_up(mean_interest, 1)) |>
   mutate(
-    what_is_the_highest_level_of_education_you_have_completed =
-      fct(
-        what_is_the_highest_level_of_education_you_have_completed,
-        levels = c("Bachelor's degree", "Master's degree", "Doctoral degree", "Other")
+    what_is_the_highest_level_of_education_you_have_completed = fct(
+      what_is_the_highest_level_of_education_you_have_completed,
+      levels = c(
+        "Bachelor's degree",
+        "Master's degree",
+        "Doctoral degree",
+        "Other"
       )
-  ) |>
-  mutate(age_category = fct(
-    age_category,
-    levels = c(
-      "Less than 30",
-      "Between 30 and 50",
-      "50 or older"
     )
-  )) |>
+  ) |>
+  mutate(
+    age_category = fct(
+      age_category,
+      levels = c(
+        "Less than 30",
+        "Between 30 and 50",
+        "50 or older"
+      )
+    )
+  ) |>
   mutate(age_category = fct_rev(age_category)) |>
   drop_na(
     age_category,
