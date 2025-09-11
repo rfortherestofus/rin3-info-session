@@ -55,8 +55,10 @@ survey_responses_today <-
   clean_names() |>
   # Convert the timestamp into a date
   mutate(timestamp = as.Date(timestamp)) |>
+  mutate(year = year(timestamp)) |> 
+  filter(year == 2025)
   # Filter to only keep responses from today
-  filter(timestamp == today())
+  # filter(timestamp == today())
 ```
 
 # About our Respondents
