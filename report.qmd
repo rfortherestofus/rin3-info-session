@@ -19,7 +19,6 @@ editor_options:
 library(tidyverse)
 library(googlesheets4)
 library(janitor)
-library(lubridate)
 library(tigris)
 library(hrbrthemes)
 library(gendercoder)
@@ -55,10 +54,9 @@ survey_responses_today <-
   clean_names() |>
   # Convert the timestamp into a date
   mutate(timestamp = as.Date(timestamp)) |>
-  mutate(year = year(timestamp)) |> 
-  filter(year == 2025)
+  mutate(year = year(timestamp)) |>
   # Filter to only keep responses from today
-  # filter(timestamp == today())
+  filter(timestamp == today())
 ```
 
 # About our Respondents

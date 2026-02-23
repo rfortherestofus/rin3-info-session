@@ -36,6 +36,10 @@ Please take the survey at [https://rfor.us/familiaritysurvey](https://rfor.us/fa
 
 ![](assets/familiarity-survey.gif)
 
+::: {.notes}
+https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit?gid=1882477504#gid=1882477504
+:::
+
 # Slides
 
 [Follow along with the slides!](https://rin3infosession.rfortherestofus.com/slides.html)
@@ -126,7 +130,7 @@ penguins |>
 ---
 
 :::{.center-slide}
-[![](assets/psc.png)](https://rfortherestofus.com/success-stories/pschousing)
+[![](assets/colorado-report-two-pages.png)](https://publichealth.jhu.edu/ivac/resources/reports/monitoring-childhood-immunization-at-the-state-level)
 :::
 
 
