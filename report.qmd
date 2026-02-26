@@ -282,7 +282,7 @@ We then used the [gendercoder package](https://github.com/ropenscilabs/gendercod
 ```{r}
 survey_responses_today |>
   drop_na(what_is_your_gender) |>
-  select(what_is_your_gender) |>
+  select(what_is_your_gender) |>0
   mutate(gender_recoded = recode_gender(what_is_your_gender)) |>
   mutate(gender_recoded = str_to_title(gender_recoded)) |>
   replace_na(list(gender_recoded = "Unable to recode")) |>

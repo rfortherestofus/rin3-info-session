@@ -54,6 +54,8 @@ https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qE
 
 - Gracielle will talk about R in 3 Months
 
+- Rachel Udow will share her experience in R in 3 Months
+
 - If you have any questions, please put them in the chat (we'll stop if necessary)
 
 - There will also be time for Q&A at the end
@@ -283,6 +285,8 @@ We have a Discord server to learn together, share accomplishments, frustrations,
 - Co-working sessions
 
 - 1-on-1 meetings
+
+# Rachel Udow {.inverse}
 
 # Learn More {.center-slide}
 
